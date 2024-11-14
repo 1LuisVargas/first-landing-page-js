@@ -1,0 +1,63 @@
+/* reset.css */
+
+/* Remove all padding, margin, and border */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+  /* Set default font family for consistency */
+body {
+    line-height: 1;
+    font-family: sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Remove list styling on ul, ol */
+ul,ol {
+list-style: none;
+}
+
+/* Remove default styling on links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Set basic typography settings */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    line-height: 1.2;
+}
+
+/* Reset tables */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+caption, th, td {
+    text-align: left;
+    font-weight: normal;
+    vertical-align: middle;
+}
+
+/* Form elements reset */
+input, button, textarea, select {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Ensure media elements don't overflow */
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
