@@ -21,3 +21,16 @@
     transform: scale(1.1);
     transition: all ease-in-out 0.5s;
 }
+
+h1{
+    margin-bottom: 25px;
+}
+
+section{
+    margin-bottom: 45px;
+}
+
+.tech-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
