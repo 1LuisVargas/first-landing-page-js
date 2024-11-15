@@ -18,26 +18,45 @@
 </head>
 <body>
 
-    <header>
+    <header class="header-container">
         <h1>Luis Vargas</h1>
+        <img class="profile-img" src="./images/New LinkedIn.jpg" alt="Professional picture of me">
         <p>Full-Stack Developer/Gaming Support Team Leader</p>
-        <img src="./images/New LinkedIn.jpg" alt="Professional picture of me">
     </header>
 
     <!-- About me -->
-    <section id="favorite">
+    <section id="about">
         <h2>About Me:</h2>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum quasi asperiores dolorem nisi tempora magnam illo rerum, ratione quae a ullam soluta assumenda error amet consequatur vitae atque doloribus aut.</p>
     </section>
 
     <!-- Technologies I'm proficient in -->
     <section id="technologies">
+        <h2>Proficient In:</h2>
+        <div class="tech-grid">
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML logo">
+                <p>HTML</p>
+            </div>
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS logo">
+                <p>CSS</p>
+            </div>
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JavaScript logo">
+                <p>JavaScript</p>
+            </div>
+        </div>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat itaque vero laudantium quas illum quo quis in, at vel commodi modi exercitationem tempore aperiam veniam ipsam quod. Nemo, sunt nihil.</p>
     </section>
 
     <!-- Activites I like to do -->
     <section id="activities">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod exercitationem, minus saepe dolores voluptas id, itaque at dicta corrupti officiis reiciendis veniam, porro veritatis maxime odio dolore? Ad, ex fuga.</p>
+        <h2>Favorite Activities</h2>
+        <input type="text" id="title" placeholder="Activity">
+        <input type="text" id="description" placeholder="Describe the activity here">
+        <input type="text" id="image" placeholder="Paste here the image URL">
+        <button id="add_activity">Add Activity</button>
     </section>
 </body>
 </html>
