@@ -33,4 +33,28 @@ section{
 .tech-grid{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0, 0.2);
+    border-radius: 10%;
+}
+
+.card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    transition: all ease-in-out 0.5s;
 }
