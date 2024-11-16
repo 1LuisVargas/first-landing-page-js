@@ -23,7 +23,12 @@
 }
 
 h1{
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+}
+
+h2{
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 section{
@@ -57,4 +62,29 @@ section{
 .card:hover {
     transform: scale(1.1);
     transition: all ease-in-out 0.5s;
+}
+
+#activities{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0px auto 20px;
+}
+
+#activities input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+header p{
+    font-size: 20px;
+}
+
+#about p{
+    font-size: 17px;
 }
