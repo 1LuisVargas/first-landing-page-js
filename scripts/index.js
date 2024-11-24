@@ -39,3 +39,25 @@ const  activityList1 = new ActivityList();
 activityList1.addActivity(new Activities(null, "Gaming", "Playing video games", "image")); //Null solution recommended by chatGPT
 
 console.log(activityList1);
+
+const adding = document.getElementById("add-activity");
+adding.addEventListener("click", () => {
+    console.log("click");
+})
+
+// function addActivity() {
+//     const activitiesContainer = document.getElementById("activities-container");
+
+//     // Creating a card for each activity
+//     const card_activity = document.createElement("div");
+//     card_activity.classList.add("card");
+//     card_activity.innerHTML = `
+//     <img src="${document.getElementById("image").value}" alt="${document.getElementById("title").value}">
+//     <p>${document.getElementById("title").value}</p>
+//     <p>${document.getElementById("description").value}</p>
+//     `;
+
+//     activitiesContainer.appendChild(card_activity);
+// }
+
+// document.getElementById("add-activity").addEventListener("click", addActivity);
