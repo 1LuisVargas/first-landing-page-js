@@ -35,29 +35,66 @@ class ActivityList {
 // Creating the activity list
 const  activityList1 = new ActivityList();
 
-// Adding the first activity to the list
-activityList1.addActivity(new Activities(null, "Gaming", "Playing video games", "image")); //Null solution recommended by chatGPT
+// Function to create a card for an activity
+function createCard(activity) {
+    // Use the passed activity to create the card
+    const card_activity = document.createElement("div");
+    card_activity.classList.add("card");
+    card_activity.innerHTML = `
+        <h3>${activity.title}</h3>
+        <img src="${activity.image}" alt="${activity.title}">
+        <p>${activity.description}</p>
+    `;
 
-console.log(activityList1);
+    // Add click event to delete the activity
+    card_activity.addEventListener("click", () => {
+        activityList1.deleteActivity(activity.id); // Delete activity by ID
+        addCard(); // Refresh the card list
+    });
 
-const adding = document.getElementById("add-activity");
-adding.addEventListener("click", () => {
-    console.log("click");
-})
+    return card_activity;
+}
 
-// function addActivity() {
-//     const activitiesContainer = document.getElementById("activities-container");
+// Function to create and append cards for all activities
+function addCard() {
+    const activitiesContainer = document.getElementById("activities-container");
+    activitiesContainer.innerHTML = ""; // Clear the container
 
-//     // Creating a card for each activity
-//     const card_activity = document.createElement("div");
-//     card_activity.classList.add("card");
-//     card_activity.innerHTML = `
-//     <img src="${document.getElementById("image").value}" alt="${document.getElementById("title").value}">
-//     <p>${document.getElementById("title").value}</p>
-//     <p>${document.getElementById("description").value}</p>
-//     `;
+    // Create cards for each activity and append them
+    activityList1.getActivities().forEach(activity => {
+        const card = createCard(activity);
+        activitiesContainer.appendChild(card);
+    });
+}
 
-//     activitiesContainer.appendChild(card_activity);
-// }
+// Handler function for adding a new activity
+function handler(event) {
+    event.preventDefault();
 
-// document.getElementById("add-activity").addEventListener("click", addActivity);
+    // Get form values
+    const title = document.getElementById("title").value;
+    const description = document.getElementById("description").value;
+    const image = document.getElementById("image").value;
+
+    // Check if all fields are filled
+    if (!title || !description || !image) {
+        alert("Please fill in all fields");
+        return;
+    }
+
+    // Create new activity and add it to the list
+    const activity = new Activities(null, title, description, image);
+    activityList1.addActivity(activity);
+
+    // Refresh the card list
+    addCard();
+
+    // Clear input fields to fill again
+    document.getElementById("title").value = "";
+    document.getElementById("description").value = "";
+    document.getElementById("image").value = "";
+}
+
+// Attach event listener to the "Add Activity" button
+const button = document.getElementById("add-activity");
+button.addEventListener("click", handler);
