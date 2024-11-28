@@ -100,3 +100,5 @@ function handler(event) {
 // Attach event listener to the "Add Activity" button
 const button = document.getElementById("add-activity");
 button.addEventListener("click", handler);
+
+//testing since I had problems making the last commit.
