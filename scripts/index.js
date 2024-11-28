@@ -37,13 +37,15 @@ const  activityList1 = new ActivityList();
 
 // Function to create a card for an activity
 function createCard(activity) {
-    // Use the passed activity to create the card
+    // De-structuring of properties
+    const {title, description, image} = activity;
+
     const card_activity = document.createElement("div");
     card_activity.classList.add("card");
     card_activity.innerHTML = `
-        <h3>${activity.title}</h3>
-        <img src="${activity.image}" alt="${activity.title}">
-        <p>${activity.description}</p>
+        <h3>${title}</h3>
+        <img src="${image}" alt="${title}">
+        <p>${description}</p>
     `;
 
     // Add click event to delete the activity
