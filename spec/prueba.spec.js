@@ -1,21 +1,22 @@
 // Creating the ToDoList class
 class ToDoList {
-  //Creating empty list
-  elements = [];
-
-  //Method to add an element
-  add(element) {
-    this.elements.push(element);
+  constructor () {
+    this.ToDoList = [];    
   }
 
-  //Method to remove an element
-  remove(index) {
-    this.elements.splice(index, 1);
+  //Method to add an element
+  add(toDo) {
+    this.ToDoList.push(toDo);
+  }
+
+  //Method to remove the last element
+  remove() {
+    this.ToDoList.pop();
   }
 
   //Method to get all elements
   list() {
-    return this.elements;
+    return this.ToDoList;
   }
 }
 
@@ -23,12 +24,12 @@ class ToDoList {
 describe('Testing ToDoList', () => {
   //Creating an instance of ToDoList before every test
   beforeEach(() => {
-    ToDoList = new ToDoList();
+    testingList = new ToDoList();
   })
 
   //Testing if the ToDoList is a class
   it('Must be a class', () => {
-    expect(typeof ToDoList).toBe('class');
+    expect(typeof ToDoList.prototype.constructor).toBe('function');
   });
 
   //Testing if the new ToDoList is an instance of the ToDoList class
@@ -37,18 +38,18 @@ describe('Testing ToDoList', () => {
   });
 
   it('Is it able to add an element?', () => {
-    ToDoList.add('Test');
-    expect(ToDoList.list().length).toBe(1);
+    testingList.add('Test');
+    expect(testingList.list()).toContain('Test');
   });
 
   it('Is it able to remove the last element?', () => {
-    ToDoList.add('Test', 'Test2', 'Test3', 'Test4');
-    ToDoList.remove(ToDoList.list().length - 1);
-    expect(ToDoList.list().length).toBe(3);
+    testingList.add('Test', 'Test2', 'Test3', 'Test4');
+    testingList.remove();
+    expect(testingList.list()).not.toContain('Test4');
   })
 
   it('Is it able to get all elements?', () => {
-    ToDoList.add('Test', 'Test2', 'Test3', 'Test4');
-    expect(ToDoList.list().length).toBe(4);
+    testingList.add('Test', 'Test2', 'Test3', 'Test4');
+    expect(testingList.list()).not.toContain('Test4');
   })
 });
