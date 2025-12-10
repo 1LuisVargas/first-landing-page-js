@@ -46,10 +46,14 @@ function createCard(activity) {
         <h3>${title}</h3>
         <img src="${image}" alt="${title}">
         <p>${description}</p>
+        <button class="delete-btn">Delete</button>
     `;
 
+    const deleteBtn = card_activity.querySelector(".delete-btn"); //Getting the delete button
+
     // Add click event to delete the activity
-    card_activity.addEventListener("click", () => {
+    deleteBtn.addEventListener("click", (event) => {
+        event.stopPropagation(); //Preventing the card click
         activityList1.deleteActivity(activity.id); // Delete activity by ID
         addCard(); // Refresh the card list
     });
